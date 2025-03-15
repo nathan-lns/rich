@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>暴富降临！💰</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 20px;
+            font-family: 'Comic Sans MS', '幼圆', 'Microsoft YaHei', cursive;
+            background: #fff8e7;
+            min-height: 100vh;
+        }
+        h1 {
+            color: #ffd700;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            text-shadow: 2px 2px #ff69b4;
+            animation: bounce 1s infinite;
+            -webkit-animation: bounce 1s infinite;
+            margin: 1rem 0;
+        }
+        .money-rain {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            margin: 2rem 0;
+            word-wrap: break-word;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .piggy {
+            width: min(150px, 30vw);
+            margin: 1rem;
+            transition: transform 0.3s;
+        }
+        .piggy:hover {
+            transform: rotate(15deg);
+        }
+        @keyframes float {
+            to { transform: translateY(-100px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <h1>🪄✨ 进来的都暴富！✨🎉</h1>
+    
+    <div class="money-rain">
+        🤑💰💵💎🪙💸💲📈🚀
+    </div>
+
+    <p>祝你：</p>
+    <p>💰 财源滚滚 •̀ᴗ•́و ̑̑ 🌸</p>
+    <p>🎰 锦鲤附体 ( ˘͈ ᵕ ˘͈ ) ♡</p>
+    <p>💸 数钱数到手软 ✨٩(ˊᗜˋ*)و✨</p>
+
+    <img class="piggy" 
+         src="https://github.githubassets.com/images/icons/emoji/unicode/1f437.png"
+         alt="招财猪猪">
+    
+    <div style="margin:2rem 0">
+        🐖🍀🌟🎁🏆🎯🍀🐖
+    </div>
+
+    <script>
+    document.addEventListener('click', function(e) {
+        const emoji = ['💰','💎','🎁','🪙','💵','✨'];
+        const element = document.createElement('div');
+        element.style.cssText = `
+            position: absolute;
+            left: ${e.clientX - 15}px;
+            top: ${e.clientY - 15}px;
+            font-size: 30px;
+            animation: float 0.8s ease-out;
+            pointer-events: none;
+        `;
+        element.textContent = emoji[Math.floor(Math.random()*emoji.length)];
+        document.body.appendChild(element);
+        setTimeout(() => element.remove(), 800);
+    });
+    </script>
+</body>
+</html>
